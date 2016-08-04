@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='ASCII'?>
+<block>
+  <name>GMSK Demodulator</name>
+  <key>tnc_nx_signal_demodulator</key>
+  <category>TNC NX</category>
+  <!--import>execfile("/home/phil/.grc_gnuradio/signal_demodulator.py")</import-->
+  <import>import tnc_nx</import>
+  <!--make>signal_demodulator(
+	dc_block_len=$dc_block_len,
+	samp_per_sym=$samp_per_sym,
+	rx_bit_inv=$rx_bit_inv,
+)</make-->
+  <make>tnc_nx.signal_demodulator(
+	dc_block_len=$dc_block_len,
+	samp_per_sym=$samp_per_sym,
+	rx_bit_inv=$rx_bit_inv,
+)</make>
+
+  <callback>set_dc_block_len($dc_block_len)</callback>
+  <callback>set_samp_per_sym($samp_per_sym)</callback>
+  <callback>set_rx_bit_inv($rx_bit_inv)</callback>
+  
+  <param>
+    <name>DC Blocker Length</name>
+    <key>dc_block_len</key>
+    <value>1000</value>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>Sample per Symbol</name>
+    <key>samp_per_sym</key>
+    <value>10</value>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>FM Sensitivity</name>
+    <key>rx_bit_inv</key>
+    <value>1</value>
+    <type>raw</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>float</type>
+    <vlen>1</vlen>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+    <vlen>1</vlen>
+  </source>
+  <doc>
+	Provides GMSK demodulator with DC-blocked input stream.
+  </doc>
+  <!--grc_source>/home/phil/Dropbox/SW-Workspace/GRC/gmsk_demodulator.grc</grc_source-->
+</block>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<block>
+  <name>Local Extrema Detector</name>
+  <key>tnc_nx_local_extrema_detect</key>
+  <category>TNC NX</category>
+  <import>import tnc_nx</import>
+  <make>tnc_nx.local_extrema_detect($hist, $threshold, $range)</make>
+  <callback>set_hist($hist)</callback>
+  <callback>set_threshold($threshold)</callback>
+  <callback>set_range($range)</callback>
+  
+  <param>
+    <name>Samples Analyzed</name>
+    <key>hist</key>
+    <value>2</value>
+    <type>int</type>
+  </param>
+  
+  <param>
+    <name>Slope threshold</name>
+    <key>threshold</key>
+    <value>0.02</value>
+    <type>float</type>
+  </param>
+
+  <param>
+    <name>Output amplitude</name>
+    <key>range</key>
+    <value>0.1</value>
+    <type>float</type>
+  </param>
+
+  <sink>
+    <name>in</name>
+    <type>float</type>
+  </sink>
+
+  <source>
+    <name>out</name>
+    <type>float</type>
+  </source>
+  
+</block>

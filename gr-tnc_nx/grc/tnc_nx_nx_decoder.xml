@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<block>
+  <name>NX Decoder</name>
+  <key>tnc_nx_nx_decoder</key>
+  <category>TNC NX</category>
+  <import>import tnc_nx</import>
+  <make>tnc_nx.nx_decoder()</make>
+
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+    <optional>0</optional>
+  </sink>
+
+  <source>
+    <name>out</name>
+    <type>message</type>
+    <optional>0</optional>
+  </source>
+  
+</block>

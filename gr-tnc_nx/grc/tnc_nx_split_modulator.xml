@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='ASCII'?>
+<block>
+  <name>Split GMSK Modulator</name>
+  <key>tnc_nx_split_modulator</key>
+  <category>TNC NX</category>
+  <!--import>execfile("/home/phil/.grc_gnuradio/split_modulator.py")</import-->
+  <import>import tnc_nx</import>
+  <!--make>split_modulator(gain=$gain,)</make-->
+  <make>tnc_nx.split_modulator(gain=$gain)</make>
+  
+  <callback>set_gain($gain)</callback>
+  
+  <param>
+    <name>FM Gain</name>
+    <key>gain</key>
+    <value>1</value>
+    <type>raw</type>
+  </param>
+  <sink>
+    <name>4k8</name>
+    <type>message</type>
+    <optional>False</optional>
+  </sink>
+  <sink>
+    <name>9k6</name>
+    <type>message</type>
+    <optional>False</optional>
+  </sink>
+  <source>
+    <name>mux out</name>
+    <type>float</type>
+    <vlen>1</vlen>
+  </source>
+  <doc>
+	Provides simple and double speed GMSK modulator paths and adds them to a single output stream.
+  </doc>
+  <!--grc_source>/home/phil/Dropbox/SW-Workspace/GRC/split_signal_mod.grc</grc_source-->
+</block>

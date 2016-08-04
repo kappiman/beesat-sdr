@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="build">
+        <df name="CMakeFiles">
+          <df name="2.8.12.2">
+            <df name="CompilerIdC">
+              <in>CMakeCCompilerId.c</in>
+            </df>
+            <df name="CompilerIdCXX">
+              <in>CMakeCXXCompilerId.cpp</in>
+            </df>
+          </df>
+        </df>
+        <df name="swig">
+          <in>_tnc_nx_swig_doc_tag.cpp</in>
+          <in>_tnc_nx_swig_swig_tag.cpp</in>
+          <in>tnc_nx_swigPYTHON_wrap.cxx</in>
+          <in>tnc_nx_swig_doc.i</in>
+        </df>
+      </df>
+      <df name="lib">
+        <in>frame_composer.cc</in>
+        <in>gscf_com.cc</in>
+        <in>mobitex_coding.cc</in>
+        <in>nx_decoder_impl.cc</in>
+        <in>nx_encoder_impl.cc</in>
+        <in>nx_protocol.cc</in>
+        <in>tnc_b1_impl.cc</in>
+        <in>tnc_impl.cc</in>
+      </df>
+      <df name="swig">
+        <in>tnc_nx_swig.i</in>
+      </df>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>build/Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>build/Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>build</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+          <cTool>
+            <incDir>
+              <pElem>include</pElem>
+            </incDir>
+          </cTool>
+          <ccTool>
+            <incDir>
+              <pElem>include</pElem>
+            </incDir>
+          </ccTool>
+        </makeTool>
+      </makefileType>
+      <item path="build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="build/swig/_tnc_nx_swig_doc_tag.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="build/swig/_tnc_nx_swig_swig_tag.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="build/swig/tnc_nx_swigPYTHON_wrap.cxx"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="build/swig/tnc_nx_swig_doc.i" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="lib/frame_composer.cc" ex="false" tool="1" flavor2="4">
+      </item>
+      <item path="lib/gscf_com.cc" ex="false" tool="1" flavor2="4">
+      </item>
+      <item path="lib/mobitex_coding.cc" ex="false" tool="1" flavor2="4">
+      </item>
+      <item path="lib/nx_decoder_impl.cc" ex="false" tool="1" flavor2="4">
+      </item>
+      <item path="lib/nx_encoder_impl.cc" ex="false" tool="1" flavor2="4">
+      </item>
+      <item path="lib/nx_protocol.cc" ex="false" tool="1" flavor2="4">
+      </item>
+      <item path="lib/tnc_b1_impl.cc" ex="false" tool="1" flavor2="4">
+      </item>
+      <item path="lib/tnc_impl.cc" ex="false" tool="1" flavor2="4">
+      </item>
+      <item path="swig/tnc_nx_swig.i" ex="false" tool="0" flavor2="2">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

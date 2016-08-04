@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<block>
+  <name>TNC BEESAT-1</name>
+  <key>tnc_nx_tnc_b1</key>
+  <category>TNC NX</category>
+  <import>import tnc_nx</import>
+  <make>tnc_nx.tnc_b1()</make>
+
+  <sink>
+    <name>Input</name>
+    <type>message</type>
+  </sink>
+  
+  <sink>
+    <name>RX4k8</name>
+    <type>byte</type>
+  </sink>
+
+
+  <source>
+    <name>Output</name>
+    <type>message</type>
+  </source>
+  
+  <source>
+    <name>TX4k8</name>
+    <type>message</type>
+  </source>
+  
+</block>

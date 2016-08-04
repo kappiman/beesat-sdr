@@ -1,0 +1,32 @@
+<block>
+  <name>TNC NX</name>
+  <key>tnc_nx_tnc</key>
+  <category>TNC NX</category>
+  <import>import tnc_nx</import>
+  <make>tnc_nx.tnc()</make>
+  
+  <sink>
+  	<name>Input</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+  
+  <sink>
+  	<name>RX</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+  
+  <source>
+  	<name>Output</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>  
+  
+  <source>
+  	<name>TX</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>
+
+</block>
