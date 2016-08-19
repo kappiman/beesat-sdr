@@ -32,7 +32,7 @@ GR_PYTHON_INSTALL(
     FILES
     __init__.py
     signal_demodulator.py
-    split_modulator.py    
+    split_modulator.py 
     DESTINATION ${GR_PYTHON_DIR}/tnc_nx
 )
 

@@ -1,4 +1,0 @@
-clear
-make
-make install
-ldconfig

@@ -37,9 +37,21 @@ list(APPEND tnc_nx_sources
     gscf_com.cc
 )
 
+set(tnc_nx_sources "${tnc_nx_sources}" PARENT_SCOPE)
+if(NOT tnc_nx_sources)
+	MESSAGE(STATUS "No C++ sources... skipping lib/")
+	return()
+endif(NOT tnc_nx_sources)
+
 add_library(gnuradio-tnc_nx SHARED ${tnc_nx_sources})
-target_link_libraries(gnuradio-tnc_nx ${Boost_LIBRARIES} ${GNURADIO_RUNTIME_LIBRARIES})
+target_link_libraries(gnuradio-tnc_nx ${Boost_LIBRARIES} ${GNURADIO_ALL_LIBRARIES})
 set_target_properties(gnuradio-tnc_nx PROPERTIES DEFINE_SYMBOL "gnuradio_tnc_nx_EXPORTS")
+
+if(APPLE)
+    set_target_properties(gnuradio-tnc_nx PROPERTIES
+        INSTALL_NAME_DIR "${CMAKE_INSTALL_PREFIX}/lib"
+    )
+endif(APPLE)
 
 ########################################################################
 # Install built library files
@@ -49,3 +61,27 @@ install(TARGETS gnuradio-tnc_nx
     ARCHIVE DESTINATION lib${LIB_SUFFIX} # .lib file
     RUNTIME DESTINATION bin              # .dll file
 )
+
+########################################################################
+# Build and register unit test
+########################################################################
+##include(GrTest)
+
+##include_directories(${CPPUNIT_INCLUDE_DIRS})
+
+##list(APPEND test_tnc_nx_sources
+##    ${CMAKE_CURRENT_SOURCE_DIR}/test_tnc_nx.cc
+##    ${CMAKE_CURRENT_SOURCE_DIR}/qa_tnc_nx.cc
+##)
+
+##add_executable(test-tnc_nx ${test_tnc_nx_sources})
+
+##target_link_libraries(
+##  test-tnc_nx
+##  ${GNURADIO_RUNTIME_LIBRARIES}
+##  ${Boost_LIBRARIES}
+##  ${CPPUNIT_LIBRARIES}
+##  gnuradio-tnc_nx
+##)
+
+##GR_ADD_TEST(test_tnc_nx test-tnc_nx)

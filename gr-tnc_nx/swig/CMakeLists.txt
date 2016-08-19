@@ -18,6 +18,14 @@
 # Boston, MA 02110-1301, USA.
 
 ########################################################################
+# Check if there is C++ code at all
+########################################################################
+if(NOT tnc_nx_sources)
+	MESSAGE(STATUS "No C++ sources... skipping swig/")
+	return()
+endif(NOT tnc_nx_sources)
+
+########################################################################
 # Include swig generation macros
 ########################################################################
 find_package(SWIG)
@@ -32,7 +40,7 @@ include(GrPython)
 # Setup swig generation
 ########################################################################
 foreach(incdir ${GNURADIO_RUNTIME_INCLUDE_DIRS})
-    list(APPEND GR_SWIG_INCLUDE_DIRS /usr/include/gnuradio/swig)
+    list(APPEND GR_SWIG_INCLUDE_DIRS ${incdir}/gnuradio/swig)
 endforeach(incdir)
 
 set(GR_SWIG_LIBRARIES gnuradio-tnc_nx)

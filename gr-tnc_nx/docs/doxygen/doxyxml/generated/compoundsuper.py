@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2.7
 
 #
 # Generated Thu Jun 11 18:44:25 2009 by generateDS.py.
