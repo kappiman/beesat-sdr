@@ -135,9 +135,9 @@ namespace gr {
 	 */
 	uint8_t
 	mobitex_coding::decode_control(struct head *ptr) {
-		if(!(check_fec(ptr->control[0], ptr->control_fec[0])))
+		if(!(check_fec(&ptr->control[0], ptr->control_fec[0])))
 			return FALSE;
-		if(!(check_fec(ptr->control[1], ptr->control_fec[1])))
+		if(!(check_fec(&ptr->control[1], ptr->control_fec[1])))
 			return FALSE;
 		return TRUE;	
 	}
@@ -181,7 +181,7 @@ namespace gr {
 
 		// check FEC and try to correct if neccessary for data and crc
 		for(int i=0; i<20; ++i){
-			if(!(check_fec(mob_data[blocknum][i], mob_fec[blocknum][i]))){
+			if(!(check_fec(&mob_data[blocknum][i], mob_fec[blocknum][i]))){
 				block_ok = FALSE;
 				//printf("ERR in Byte: %02X\n", i);
 			}
@@ -205,7 +205,7 @@ namespace gr {
 
 		// check FEC and try to correct if neccessary for data and crc
 		for(int i=0; i<6; ++i){
-			if(!(check_fec(mob_sdb[i], mob_sdb_fec[i]))){
+			if(!(check_fec(&mob_sdb[i], mob_sdb_fec[i]))){
 				block_ok = FALSE;
 				//printf("ERR in Byte: %02X\n", i);
 			}
@@ -399,8 +399,8 @@ namespace gr {
 	 * 		FALSE when error could not be corrected
 	 */
 	uint8_t
-	mobitex_coding::check_fec(uint8_t byte, uint8_t fec){
-		uint8_t corrector = decalc_fec((byte<<4) | (fec));
+	mobitex_coding::check_fec(uint8_t *byte, uint8_t fec){
+		uint8_t corrector = decalc_fec((*byte<<4) | (fec));
 		//printf("CORRECTOR: %X", corrector);
 		if(corrector == 0xFF){
 			// byte can not be corrected
@@ -408,7 +408,7 @@ namespace gr {
 		}else{
 			// correct the byte at given bit
 			//printf(" from %X", *byte);
-			byte ^= corrector;
+			*byte ^= corrector;
 			//printf(" - to: %X\n", *byte);
 			return TRUE;
 		}

@@ -63,7 +63,7 @@ namespace gr {
     	uint8_t even_parity_8b		(uint8_t val);
     	uint8_t decalc_fec			(uint16_t data);
     	uint8_t even_parity_12b	(uint16_t val);
-    	uint8_t check_fec			(uint8_t byte, uint8_t fec);
+    	uint8_t check_fec			(uint8_t *byte, uint8_t fec);
     	
     	// CRC FUNCTIONS
     	uint16_t calc_cs_crc		(uint8_t *ptr, int bytecount);
