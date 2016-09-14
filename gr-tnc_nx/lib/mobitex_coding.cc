@@ -34,6 +34,8 @@
 #define GEN_POLY_CS 	0x1021
 #define GEN_POLY_X25	0x8408
 
+#define BIT_FLIP(a,n) {(a)[(n)/8] ^= (1 << ((n)%8));}
+
 namespace gr {
   namespace tnc_nx {
 
@@ -144,10 +146,30 @@ namespace gr {
 	
 	uint8_t
 	mobitex_coding::decode_callsign() {
+	        register int i, j = 0;
+	  
 		if(!(calc_cs_crc(callsign, 8)))
 			return TRUE;
-		else
-			return FALSE;
+		/* try to flip one bit at a time to get CRC match */
+		for (i = 0; i < 8*8; i++) {
+		  BIT_FLIP(callsign, i);
+		  if(!(calc_cs_crc(callsign, 8))) return TRUE;
+		  BIT_FLIP(callsign, i);
+		}
+
+		/* try double bit flips */
+		for (i = 0; i < 8*8; i++) {
+		  BIT_FLIP(callsign, i);
+		  for (j = i + 1; j < 8*8; j++) {
+		    BIT_FLIP(callsign, j);
+		    if(!(calc_cs_crc(callsign, 8))) return TRUE;
+		    BIT_FLIP(callsign, j);
+		  }
+		  BIT_FLIP(callsign, i);
+		}
+
+		/* unable to correct single or double bit error */
+		return FALSE;
 	}
 	
 	uint8_t
