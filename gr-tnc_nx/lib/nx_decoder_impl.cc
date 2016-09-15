@@ -139,8 +139,8 @@ namespace gr {
 
                 if (check_address(rx.cur.control[1])) { // ADR OK
                   // TODO: eval msg-type
-                  printf("\n****** SYNC! ****** \n");
-                  printf("RX-MSG-TYPE: %02X\n", rx.cur.msg_type);
+                  /*printf("\n****** SYNC! ****** \n");
+		    printf("RX-MSG-TYPE: %02X\n", rx.cur.msg_type);*/
                   switch (rx.cur.msg_type) {
                     case T_REG:
                     case T_ECHO:
@@ -169,9 +169,9 @@ namespace gr {
           case RX_CS:
             if (fr.read_callsign(in[i])) {
               if (!rx.decode_callsign()) {
-                printf("BAD CS\n");
+                /*printf("BAD CS\n");
                 printf("CS    : %.*s\n", 6, rx.callsign);
-                printf("CRC-16: %02X%02X\n", rx.callsign[6], rx.callsign[7]);
+                printf("CRC-16: %02X%02X\n", rx.callsign[6], rx.callsign[7]);*/
               }
               switch (rx.cur.msg_type) {
                 case T_ACK:
