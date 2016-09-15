@@ -33,4 +33,5 @@ except ImportError:
 # import any pure python here
 #
 from signal_demodulator import *
+from beesat_classifier import beesat_classifier
 

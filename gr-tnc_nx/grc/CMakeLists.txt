@@ -25,5 +25,5 @@ install(FILES
     tnc_nx_signal_demodulator.xml
     tnc_nx_split_modulator.xml
     tnc_nx_local_extrema_detect.xml
-    DESTINATION share/gnuradio/grc/blocks
+    tnc_nx_beesat_classifier.xml DESTINATION share/gnuradio/grc/blocks
 )
