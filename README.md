@@ -1,6 +1,13 @@
 Software Defined Radio TNC for BEESAT
 =====================================
 
+Note by Daniel Estevez EA4GPZ: The instructions below about how to install
+GNUradio and out-of-tree modules where written by the TU Berlin BEESAT team. I'm
+not sure about how good an idea is to follow them blindly, as they may mess up
+your system or not work well depending on the versions of GNUradio and Swig you
+use, how you install these, your distribution and so on. Please follow them
+cautiosly and at your own risk. Probably you can find better information online
+that applies to your particular distribution and version.
 
 ## Installation of gnuradio on Ubuntu/Debian
 
@@ -29,12 +36,19 @@ Change to the build directory of the sdr tnc package:
 cd beesat-sdr/gr-tnc_nx/build
 ```
 
+Note by EA4GPZ: You shouln't install OOT modules intto /usr/. You should install
+them into /usr/local/.
 Invoke cmake, additionally give a specific install path:
 ```bash
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ../
 ```
 
 ### Solve common error
+Note by EA4GPZ: I think that you should never get this
+error with current versions of GNUradio and cmake and that trying to do this fix
+is a bad idea. If you get this error you should try to find its cause instead of
+doing this sort of workaround fixes.
+
 You may get an error like the following, when cmake checks for the gnuradio runtime library:
 
 ```
@@ -73,6 +87,8 @@ change it to:
 Cflags: -I${includedir} -IXXX
 ```
 
+Note by EA4GPZ: You shouln't install OOT modules intto /usr/. You should install
+them into /usr/local/.
 save it, clear cmake cache and invoke cmake again:
 ```bash
 rm CMakeCache.txt
