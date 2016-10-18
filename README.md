@@ -4,17 +4,8 @@ Software Defined Radio TNC for BEESAT
 ## Contributions
 Many thanks to Daniel Estevez (EA4GPZ) who contributed very important fixes and ideas to this repository.
 
-Note by Daniel Estevez EA4GPZ: The instructions below about how to install
-GNUradio and out-of-tree modules where written by the TU Berlin BEESAT team. I'm
-not sure about how good an idea is to follow them blindly, as they may mess up
-your system or not work well depending on the versions of GNUradio and Swig you
-use, how you install these, your distribution and so on. Please follow them
-cautiosly and at your own risk. Probably you can find better information online
-that applies to your particular distribution and version.
-
 ## Installation of gnuradio on Ubuntu/Debian
 The following installation instructions were tested under Ubuntu 14.04 and Debian Jessie.
-
 
 ### Ubuntu prerequisite: PPA with recent version of gnuradio:
 
@@ -54,7 +45,6 @@ make -j4
 sudo make install
 sudo ldconfig
 ```
-
 
 ## GRC files
 For decoding BEESAT-2 telemetry start gnuradio-companion and open the file:
