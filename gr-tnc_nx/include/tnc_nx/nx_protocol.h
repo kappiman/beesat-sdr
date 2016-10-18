@@ -1,6 +1,8 @@
 /* -*- c++ -*- */
 /*
- * Copyright 2013 <+YOU OR YOUR COMPANY+>.
+ * Copyright 2013 - 2016 Chair of Space Technology, Technische Universität Berlin
+ * 
+ * Authors: Philip Werner, Sascha Kapitola
  *
  * This is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

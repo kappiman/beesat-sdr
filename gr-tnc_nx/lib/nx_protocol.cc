@@ -1,6 +1,8 @@
 /* -*- c++ -*- */
 /*
- * Copyright 2013 <+YOU OR YOUR COMPANY+>.
+ * Copyright 2013 - 2016 Chair of Space Technology, Technische Universität Berlin
+ * 
+ * Authors: Philip Werner, Sascha Kapitola
  *
  * This is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,13 +18,9 @@
  * along with this software; see the file COPYING.  If not, write to
  * the Free Software Foundation, Inc., 51 Franklin Street,
  * Boston, MA 02110-1301, USA.
- */
-
-/*
- * nx_protocol.cc
- *
- *  Created on: 01.08.2013
- *      Author: Philipp Werner
+ * 
+ * Created on: 01.08.2013
+ * 
  */
 
 #include <tnc_nx/nx_protocol.h>
