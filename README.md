@@ -1,3 +1,7 @@
+New location of repository:
+===========================
+The repository was moved to https://git.tu-berlin.de/rft/com/mobitub-2
+
 Software Defined Radio TNC for BEESAT
 =====================================
 
